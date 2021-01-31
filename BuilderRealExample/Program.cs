@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace BuilderRealExample
 {
@@ -9,6 +10,8 @@ namespace BuilderRealExample
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
+            
             // содаем движок шаблонизатора
             TemplateEngine templateEngine = new TemplateEngine();
             

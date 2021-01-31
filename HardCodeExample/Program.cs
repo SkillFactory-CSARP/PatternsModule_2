@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace HardCodeExample
@@ -8,6 +9,8 @@ namespace HardCodeExample
     {
         static async Task Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
+            
             string siteUrl = "http://192.250.225.62/";
             string resourceID = "?965502";
             

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace BuilderExample
 {
@@ -7,6 +8,8 @@ namespace BuilderExample
     {
         void Main()
         {
+            Console.OutputEncoding = Encoding.UTF8;
+            
             // инициализация строителя
             IBuilder builder = new ProductBuilder();
             // Создаем менеджера, который будет рулить процессом

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Threading.Channels;
 
 namespace CommandExample
@@ -81,6 +82,8 @@ namespace CommandExample
     {  
         static void Main()
         {
+            Console.OutputEncoding = Encoding.UTF8;
+            
             // создадим отправителя 
             var sender = new Sender();
             

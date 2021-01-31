@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace SpaghettiTask
 {
@@ -6,6 +7,8 @@ namespace SpaghettiTask
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
+            
             // Печатаем баннер нужного размера на материале
             var printer = new Printer();
             printer.Start(120, "Canvas");

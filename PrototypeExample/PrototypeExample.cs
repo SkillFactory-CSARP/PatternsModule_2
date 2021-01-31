@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace PatternsModule_2
 {
@@ -54,6 +55,8 @@ namespace PatternsModule_2
     {
         static void Main()
         {
+            Console.OutputEncoding = Encoding.UTF8;
+            
             //  создаем первый конкретный объект по прототипу 
             Prototype prototype = new ClassOne(1);
             // Клонируем

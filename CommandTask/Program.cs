@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace CommandTask
 {
@@ -9,6 +10,8 @@ namespace CommandTask
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
+            
             Pult pult = new Pult();
             Gate gate = new Gate();
             

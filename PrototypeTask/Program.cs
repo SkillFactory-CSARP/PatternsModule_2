@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace PrototypeTask
 {
@@ -9,6 +10,8 @@ namespace PrototypeTask
         /// </summary>
         static void Main()
         {
+            Console.OutputEncoding = Encoding.UTF8;
+            
             BaseClass myObject = new ImplementationOne(1);
             myObject.GetId();
             

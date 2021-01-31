@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text;
 
 namespace ComplexityTask
 {
@@ -7,6 +8,8 @@ namespace ComplexityTask
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
+            
             Console.WriteLine(Validate(0, null));
         }
 

@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using YoutubeExplode;
-using YoutubeExplode.Converter;
 
 namespace FinalPractice
 {
@@ -12,50 +9,25 @@ namespace FinalPractice
     {
         static async Task Main(string[] args)
         {
-            string siteUrl = "https://youtu.be";
-            string resourceID = "/YCaGYUIfdy4";
-
-
-
-
-            var youtube = new YoutubeClient();
+            Console.OutputEncoding = Encoding.UTF8;
             
-           var task =  youtube.Videos.DownloadAsync("https://www.youtube.com/watch?v=A11m-vMf24o", "vid.avi");
-
-           task.Wait();
-           
-           // var result = await videoInfos.Videos.GetAsync(new VideoId("YCaGYUIfdy4"));
-
-           //   result.
-           //.GetVideosAsync("rick");
-
-
-           //  Console.WriteLine();
-
-
-
-
-
-
-           // запрос выгрузки информации с сайта 
-           // await LoadSite(siteUrl, resourceID);
-        }
-
-        static async Task LoadSite( string siteUrl, string resourceId )
-        {
-            var httpClient = new HttpClient();
+            // Ссылка для загрузки виидео. 
+            // Ее также можно запрашивать через Console.Readline()
+            var videoUrl = "https://www.youtube.com/watch?v=1lBe2ao3j1Q";
             
-            httpClient.BaseAddress = new Uri(siteUrl);
+            // Ссздадим отправителя и получателя команд
+            var downloader = new Downloader();
+            var receiverClient = new YoutubeClient();
             
-            var result = await httpClient.GetAsync(resourceId);
-
-            var cntnt = await result.Content.ReadAsByteArrayAsync();
+            // Команда на запрос иинформации
+            var getInfoCommand = new GetInfoCommand(receiverClient);
+            downloader.SetCommand(getInfoCommand);
+            await downloader.RunAsync(videoUrl);
             
-           // await File.WriteAllBytesAsync("vid.mp4", cntnt);
-            
-         //   var contentString = await result.Content.ReadAsStringAsync();
-         Console.WriteLine();
-           // Console.WriteLine(contentString);
+            // Команда на загрузку
+            var downLoadCommand = new DownloadCommand(receiverClient);
+            downloader.SetCommand(downLoadCommand);
+            await downloader.RunAsync(videoUrl);
         }
     }
 }

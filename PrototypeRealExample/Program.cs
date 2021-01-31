@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace PrototypeRealExample
 {
@@ -6,6 +7,8 @@ namespace PrototypeRealExample
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
+            
             // создаем точку
             ILocation location = new Point(30.245,40.954);
             // клонируем точку (получаем новую точку с теми же координатами)
