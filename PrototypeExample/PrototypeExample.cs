@@ -10,7 +10,7 @@ namespace PatternsModule_2
     {
         protected int Id;
         
-        // Метод- конструктор
+        // Метод - конструктор
         public Prototype(int id)
         {
             Id = id;

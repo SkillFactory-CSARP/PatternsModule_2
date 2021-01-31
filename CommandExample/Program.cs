@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Text;
-using System.Threading.Channels;
 
 namespace CommandExample
 {
-    
     /// <summary>
     /// Базовый класс команды
     /// </summary>

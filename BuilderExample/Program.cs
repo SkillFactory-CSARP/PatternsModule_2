@@ -17,6 +17,7 @@ namespace BuilderExample
             
             //  Стартуем и получаем результат
             buildManager.StartBuildingProcess();
+            
             Product product = builder.GetBuildingResult();
         }
     }

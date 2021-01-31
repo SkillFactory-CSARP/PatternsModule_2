@@ -8,7 +8,7 @@ namespace PrototypeRealExample
     class Place : ILocation
     {
         string Address;
-        
+
         public Place(string address)
         {
             Address = address;
